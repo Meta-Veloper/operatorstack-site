@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agent Starter Kit — OperatorStack</title>
+  <meta name="description" content="Deploy your first AI agent in 24 hours. No coding required. The complete template bundle and prompt library for non-technical business owners." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0A;
+      --text: #FFFFFF;
+      --orange: #F97316;
+      --orange-dark: #EA6C0A;
+      --blue: #3B82F6;
+      --muted: #9CA3AF;
+      --border: #1F2937;
+      --section-bg: #111111;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+    .container-wide { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    /* ANNOUNCEMENT BAR */
+    .announcement {
+      background: var(--orange);
+      color: #fff;
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* NAV */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-logo { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .btn-nav {
+      background: var(--orange);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .btn-nav:hover { background: var(--orange-dark); text-decoration: none !important; }
+
+    /* SECTIONS */
+    section { padding: 80px 0; }
+    section.tight { padding: 48px 0; }
+    section.alt { background: var(--section-bg); }
+
+    /* HERO */
+    .hero { padding: 96px 0 80px; text-align: center; }
+    .pre-headline {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 18px 36px;
+      border-radius: 8px;
+      letter-spacing: -0.01em;
+      transition: background 0.15s, transform 0.1s;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); text-decoration: none; }
+    .btn-price-note { display: block; margin-top: 10px; font-size: 13px; color: var(--muted); }
+    .trust-bar {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 28px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .trust-bar span::before { content: '✓ '; color: var(--orange); }
+
+    /* SOCIAL PROOF */
+    .social-proof { background: var(--section-bg); }
+    .quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 16px; }
+    .quote-card {
+      background: #1a1a1a;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 8px;
+      padding: 20px;
+      font-size: 14px;
+      font-style: italic;
+      color: #D1D5DB;
+      line-height: 1.6;
+    }
+    .quote-source { font-style: normal; font-size: 12px; color: var(--muted); margin-top: 10px; font-weight: 600; }
+    .proof-note { text-align: center; font-size: 12px; color: var(--muted); }
+
+    /* SECTION HEADINGS */
+    h2 {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+    }
+    h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    p { margin-bottom: 16px; color: #D1D5DB; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); }
+    ul { padding-left: 0; list-style: none; }
+    ul li { padding: 6px 0; color: #D1D5DB; }
+
+    /* PROBLEM / AGITATION */
+    .problem-list li { padding: 8px 0; color: #D1D5DB; font-size: 16px; }
+
+    /* PRODUCT CONTENTS */
+    .contents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 36px; }
+    .content-card {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .content-card-icon { font-size: 28px; margin-bottom: 12px; }
+    .content-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .content-card p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    /* WHO IT'S FOR */
+    .for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .for-col { background: #111; border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+    .for-col.yes { border-top: 3px solid #22C55E; }
+    .for-col.no { border-top: 3px solid #EF4444; }
+    .for-col h3 { font-size: 17px; margin-bottom: 16px; }
+    .for-col li { padding: 7px 0; font-size: 15px; color: #D1D5DB; border-bottom: 1px solid #1a1a1a; }
+    .for-col li:last-child { border-bottom: none; }
+
+    /* OBJECTIONS */
+    .objection { border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .objection:last-child { border-bottom: none; }
+    .objection h3 { color: var(--orange); font-size: 19px; margin-bottom: 12px; }
+
+    /* PRICING */
+    .pricing-box {
+      background: #111;
+      border: 2px solid var(--orange);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .price-old { text-decoration: line-through; color: var(--muted); font-size: 22px; }
+    .price-new { font-size: 56px; font-weight: 900; color: var(--orange); line-height: 1; margin: 8px 0 4px; }
+    .price-note { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .checklist { text-align: left; margin: 28px auto; max-width: 380px; }
+    .checklist li { padding: 7px 0; font-size: 15px; color: #D1D5DB; }
+    .checklist li::before { content: '✅ '; }
+    .scarcity { font-size: 13px; color: var(--orange); font-weight: 600; margin-top: 16px; }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-q { font-weight: 700; font-size: 17px; margin-bottom: 10px; color: var(--text); }
+    .faq-a { color: #D1D5DB; font-size: 15px; }
+
+    /* EMAIL OPT-IN */
+    .optin-box {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 48px;
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .optin-box h2 { font-size: 28px; margin-bottom: 10px; }
+    .optin-box p { color: var(--muted); font-size: 15px; }
+    .optin-form { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; justify-content: center; }
+    .optin-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      background: #1a1a1a;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 15px;
+    }
+    .optin-form input::placeholder { color: var(--muted); }
+    .btn-optin {
+      background: var(--orange);
+      color: #fff;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-optin:hover { background: var(--orange-dark); }
+    .optin-disclaimer { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .for-grid { grid-template-columns: 1fr; }
+      .pricing-box { padding: 32px 20px; }
+      .optin-box { padding: 32px 20px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement">
+  🚀 Launch week: First 50 copies at $67 (regular $97). <strong>42 remaining.</strong>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">OperatorStack</div>
+  <div class="nav-links">
+    <a href="#whats-inside">What's Inside</a>
+    <a href="#who-its-for">Who It's For</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#pricing" class="btn-nav">Start Here →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="pre-headline">For small business owners who use AI daily and still feel behind</div>
+    <h1>Your AI Should Be Running Your Business.<br>Right Now. It's Not.</h1>
+    <p class="hero-sub">Most business owners use ChatGPT like a fancy search engine. There's a different way to use AI — where it actually runs your operations, handles your workflows, and works while you sleep. This is how you get there.</p>
+    <a href="#pricing" class="btn-primary">→ Get The Starter Kit — $67 Today</a>
+    <span class="btn-price-note">Regular $97. Launch week pricing for first 50 buyers.</span>
+    <div class="trust-bar">
+      <span>Instant download</span>
+      <span>Deploy in 24 hours</span>
+      <span>No coding required</span>
+      <span>7-day money-back guarantee</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof tight">
+  <div class="container-wide">
+    <div class="quote-grid">
+      <div class="quote-card">
+        "I spent 3 months trying to figure out how to connect my agents to my tools. There's no guide for this anywhere."
+        <div class="quote-source">— Real comment from r/entrepreneur</div>
+      </div>
+      <div class="quote-card">
+        "Every AI agency wants $5,000 minimum. I just want someone to set up one agent that handles my customer emails."
+        <div class="quote-source">— Real comment from r/smallbusiness</div>
+      </div>
+      <div class="quote-card">
+        "The tutorials show you how to make a ChatGPT wrapper, not an actual business automation."
+        <div class="quote-source">— Real comment from r/ChatGPT</div>
+      </div>
+    </div>
+    <p class="proof-note">These are real problems real business owners are posting online right now.</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+  <div class="container">
+    <h2>You're Using AI. But AI Isn't Running Your Business.</h2>
+    <p>Here's what's actually happening for most business owners right now:</p>
+    <p>You open ChatGPT. You type a question. You get an answer. You copy it somewhere. You close the tab. You do it again tomorrow.</p>
+    <p>That's not AI working for your business. <strong>That's you working for AI.</strong></p>
+    <p>Meanwhile, you're still:</p>
+    <ul class="problem-list">
+      <li>❌ Manually answering the same customer emails — the ones you've answered 200 times</li>
+      <li>❌ Copying information from one tool to another by hand</li>
+      <li>❌ Re-explaining your business to ChatGPT every single session because it has no memory</li>
+      <li>❌ Doing research that should take 2 minutes but takes 45</li>
+      <li>❌ Working 60+ hour weeks while wondering why AI hasn't changed that yet</li>
+    </ul>
+    <p style="margin-top:24px;"><strong>You've heard about "AI agents." You know they exist. You just don't know how to build one that actually works in your business.</strong></p>
+    <p>Every tutorial assumes you're a developer. The "no-code" tools still require 20 hours of configuration. You start, get lost, and give up. Then feel further behind.</p>
+  </div>
+</section>
+
+<!-- AGITATION -->
+<section class="alt">
+  <div class="container">
+    <h2>This Gap Is Costing You More Than You Think</h2>
+    <ul class="problem-list">
+      <li>⏱ 5–10 hours of work every week that should be automated</li>
+      <li>📉 Leads slipping through because follow-up is manual</li>
+      <li>🏃 Competitors who've figured this out are moving faster</li>
+      <li>💸 You're trading time for money instead of building a system</li>
+    </ul>
+    <p style="margin-top:24px;">The math: 8 wasted hours/week × 50 weeks × your hourly value = <strong>a full-time salary lost to tasks AI should be handling.</strong></p>
+    <p>The enterprise solution to this problem costs $15,000–$40,000 for an agency to set it up for you.</p>
+    <p><strong>We charge $97. This week, $67.</strong></p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section>
+  <div class="container">
+    <h2>There's a Better Way. It's Called Being an Operator.</h2>
+    <p>An AI <em>user</em> types prompts and copies answers.</p>
+    <p>An AI <em>operator</em> has a team of agents running workflows, handling communications, processing information, and reporting back — without being asked.</p>
+    <p>The difference isn't intelligence. It's architecture. And it's learnable.</p>
+    <p><strong>The gap between "ChatGPT user" and "AI operator" is not a technical gap. It's a setup gap.</strong> Once you know how to structure your agents, what to give them, and how to connect them to your real business tools — it clicks. And it runs.</p>
+  </div>
+</section>
+
+<!-- PRODUCT REVEAL -->
+<section class="alt" id="whats-inside">
+  <div class="container">
+    <h2>Introducing: The AI Agent Starter Kit</h2>
+    <p><strong>The fastest path from ChatGPT user to AI operator.</strong></p>
+    <p>A complete template bundle and prompt library built by someone who already runs a full multi-agent business stack — with memory systems, mission control, and real workflow automations all running live.</p>
+    <p>This isn't theory. This is a documented, operational system that's been packaged for you.</p>
+
+    <h2 style="margin-top:48px;">Everything You Need to Deploy Your First AI Agent in 24 Hours</h2>
+    <div class="contents-grid">
+      <div class="content-card">
+        <div class="content-card-icon">🤖</div>
+        <h3>5 Ready-to-Deploy Agent Personas (SOUL Templates)</h3>
+        <p>General Assistant, Research Agent, Ops/ERP Agent, Content Creator, Customer Comms. Each includes identity, role, rules, escalation protocols, and handoff instructions. Drop it in. It runs.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon">📋</div>
+        <h3>50 Operational Business Prompts</h3>
+        <p>Not generic prompts. Real workflow prompts for customer emails, content creation, research, operations, and sales — all designed to work with agent memory.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon">🔄</div>
+        <h3>3 Agent Handoff Protocol Templates</h3>
+        <p>The secret most people miss: how agents pass work to each other without losing context or duplicating effort.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon">✅</div>
+        <h3>Agent Onboarding Checklist</h3>
+        <p>Step-by-step checklist for launching each agent. No guessing. No YouTube tutorials. Just: do this, then this, then this.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon">📊</div>
+        <h3>Mission Control Setup Walkthrough</h3>
+        <p>How to monitor your agents without micromanaging them. One dashboard. Three minutes a day.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon">⚡</div>
+        <h3>"First Agent in 24 Hours" Quick-Start Guide</h3>
+        <p>From download to deployed in one day. Even if you've never built an agent before.</p>
+      </div>
+    </div>
+    <p style="margin-top:36px;text-align:center;font-size:16px;">Total value of everything above: easily $500+ if you tried to piece this together from YouTube and Reddit.<br><strong>Your investment today: $67.</strong></p>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section>
+  <div class="container">
+    <h2>Why This Works (And Why You Should Trust It)</h2>
+    <p>This kit was built by someone who isn't teaching theory.</p>
+    <p>The system behind this product — multi-agent orchestration, SOUL-based agent personas, mission control dashboards, and real workflow automation — is already running. Daily. In a live business.</p>
+    <p>The templates in this kit are the exact templates used to run that stack. The prompts are the exact prompts that power those agents. The handoff protocols are what make the whole system work together.</p>
+    <p>This isn't a course built by someone who read about agents.<br><strong>This is operational documentation from someone running them.</strong></p>
+    <p>The AI agent space has plenty of grifters selling ChatGPT basics in 2026. This isn't that. This is the real infrastructure, packaged for you.</p>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="alt" id="who-its-for">
+  <div class="container-wide">
+    <h2 style="text-align:center;">Is This For You?</h2>
+    <div class="for-grid">
+      <div class="for-col yes">
+        <h3>✅ This Is For You If:</h3>
+        <ul>
+          <li>You already use ChatGPT or Copilot but feel like it's just an expensive search engine</li>
+          <li>You want AI handling repetitive tasks while you focus on growth</li>
+          <li>You've looked at AI tutorials and got lost because they assume you can code</li>
+          <li>You run a real business ($50K–$500K/yr) and need tools that work in the real world</li>
+          <li>You tried Zapier and gave up — too complex for the problem you were solving</li>
+          <li>You're non-technical but willing to spend one afternoon on setup</li>
+        </ul>
+      </div>
+      <div class="for-col no">
+        <h3>❌ This Is NOT For You If:</h3>
+        <ul>
+          <li>You've never used ChatGPT or any AI tool (start there first)</li>
+          <li>You're a developer wanting custom agent infrastructure</li>
+          <li>You want a magic button that requires zero effort</li>
+          <li>You're an enterprise company with a procurement team</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section>
+  <div class="container">
+    <h2>Common Questions</h2>
+    <div class="objection">
+      <h3>"But I'm Not Technical..."</h3>
+      <p>Perfect. This wasn't built for technical people. The SOUL templates are text files with clear structure. The prompts are ready-to-paste. The checklists are step-by-step. If you can use Google Docs, you can deploy these agents.</p>
+    </div>
+    <div class="objection">
+      <h3>"Is This Just More ChatGPT Prompts?"</h3>
+      <p>No. Generic prompt packs give you 1,000 prompts with no system behind them. This kit gives you an <em>architecture</em>. Agent personas have roles, rules, memory hooks, and handoff protocols. They connect to each other. The difference is like a box of random LEGO bricks vs. a finished house with instructions.</p>
+    </div>
+    <div class="objection">
+      <h3>"What If It Doesn't Work For My Business?"</h3>
+      <p>7-day full refund. No questions. Email us and we'll refund the full $67. We're confident enough in this that we don't need to make the refund process difficult.</p>
+    </div>
+    <div class="objection">
+      <h3>"What Tools Do I Need?"</h3>
+      <p>ChatGPT (free or Plus) or Claude (free or Pro) — both work. Your existing business tools. No paid subscriptions beyond what you already have. The advanced integrations are optional — you start simple and expand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="alt" id="pricing">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:40px;">Get The AI Agent Starter Kit</h2>
+    <div class="pricing-box">
+      <div class="price-old">$97</div>
+      <div class="price-new">$67</div>
+      <div class="price-note">Launch week only. Price goes to $97 when first 50 copies sell.</div>
+      <ul class="checklist">
+        <li>5 SOUL Agent Persona Templates</li>
+        <li>50 Operational Business Prompts</li>
+        <li>3 Handoff Protocol Templates</li>
+        <li>Agent Onboarding Checklist</li>
+        <li>Mission Control Setup Walkthrough</li>
+        <li>"First Agent in 24 Hours" Quick-Start Guide</li>
+        <li>7-day money-back guarantee</li>
+        <li>All future updates included</li>
+      </ul>
+      <a href="LEMON_SQUEEZY_URL_HERE" class="btn-primary" style="font-size:16px;width:100%;display:block;text-align:center;">→ GET THE STARTER KIT FOR $67 ←</a>
+      <div class="scarcity">42 of 50 launch-week copies remaining.</div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;">Instant download via Lemon Squeezy — secure checkout</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <h2 style="margin-bottom:8px;">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to set up my first agent?</div>
+      <div class="faq-a">The "First Agent in 24 Hours" guide gets you from download to deployed in under 2 hours of actual work. Most people complete it the same day they buy.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to subscribe to anything else?</div>
+      <div class="faq-a">No. The templates work with ChatGPT (free or Plus) or Claude (free or Pro). No additional subscriptions required to get started.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I get stuck?</div>
+      <div class="faq-a">Email hello@operatorstack.site and we'll respond within 24 hours on business days. The kit is designed to be self-contained, but we're here if you need us.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this a course or a product?</div>
+      <div class="faq-a">It's a product — templates, prompts, and guides that you download and deploy. Not a course with videos you have to watch before doing anything.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will this work for my type of business?</div>
+      <div class="faq-a">The agent personas cover the most common business functions (comms, content, research, operations, general assistant). They're adaptable to any service business, agency, freelancer, consultant, or e-commerce operation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's your refund policy?</div>
+      <div class="faq-a">7 days, no questions. If it doesn't work for you, we refund the full purchase price.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="alt" style="text-align:center;">
+  <div class="container">
+    <h2>Your AI agents aren't running your business yet.<br>They could be. Today.</h2>
+    <p style="color:var(--muted);max-width:480px;margin:16px auto 36px;">The gap between ChatGPT user and AI operator is not as wide as it looks. It's a few templates, a few configurations, and one afternoon of setup. Everything you need is in this kit.</p>
+    <a href="#pricing" class="btn-primary">→ GET THE STARTER KIT FOR $67 ←</a>
+    <p style="font-size:13px;color:var(--muted);margin-top:16px;">Instant download. 7-day money-back guarantee. Deploy in 24 hours.</p>
+  </div>
+</section>
+
+<!-- EMAIL OPT-IN -->
+<section>
+  <div class="container">
+    <div class="optin-box">
+      <h2>Not ready to buy? Start here for free.</h2>
+      <p><strong>Download: "The 5 AI Agent Mistakes Most Business Owners Make"</strong></p>
+      <p>A short guide covering the 5 most common ways non-technical business owners set up AI agents wrong — and exactly how to fix each one.</p>
+      <!-- Replace action with your Beehiiv form action URL -->
+      <form class="optin-form" action="BEEHIIV_FORM_URL_HERE" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required />
+        <button type="submit" class="btn-optin">Send Me The Free Guide →</button>
+      </form>
+      <p class="optin-disclaimer">No spam. Just practical AI operator content, weekly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 OperatorStack &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms</a> &nbsp;|&nbsp; <a href="#">Refund Policy</a> &nbsp;|&nbsp; <a href="mailto:hello@operatorstack.site">Contact</a></p>
+  <p style="margin-top:8px;">Built by a practitioner, for operators.</p>
+</footer>
+
+</body>
+</html>
