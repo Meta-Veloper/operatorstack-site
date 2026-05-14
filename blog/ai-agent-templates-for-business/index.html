@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agent Templates for Business: The 5 You Need First — OperatorStack</title>
+  <meta name="description" content="AI agent templates for business don't need to be built from scratch. Here are the 5 core agent templates every business needs, what's in each one, and how to deploy them." />
+  <link rel="canonical" href="https://operatorstack.site/blog/ai-agent-templates-for-business/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://operatorstack.site/blog/ai-agent-templates-for-business/" />
+  <meta property="og:title" content="AI Agent Templates for Business: The 5 You Need First" />
+  <meta property="og:description" content="Stop building AI agents from scratch every time. Here are the 5 core templates, what goes in each one, and how to deploy them in your business starting today." />
+  <meta property="og:image" content="https://operatorstack.site/images/social-card.png" />
+  <meta property="article:published_time" content="2026-05-14" />
+  <meta property="article:author" content="Trevon Wilson" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Agent Templates for Business: The 5 You Need First","description":"AI agent templates for business don't need to be built from scratch. Here are the 5 core agent templates every business needs, what's in each one, and how to deploy them.","author":{"@type":"Person","name":"Trevon Wilson"},"publisher":{"@type":"Organization","name":"OperatorStack","url":"https://operatorstack.site"},"datePublished":"2026-05-14","url":"https://operatorstack.site/blog/ai-agent-templates-for-business/"}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM7HT7DFHW"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LM7HT7DFHW');</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0A0A0A; --text: #FFFFFF; --orange: #F97316; --orange-dark: #EA6C0A; --blue: #3B82F6; --muted: #9CA3AF; --border: #1F2937; --section-bg: #111111; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.8; }
+    a { color: var(--orange); text-decoration: none; } a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    nav { border-bottom: 1px solid var(--border); padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; position: sticky; top: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(8px); z-index: 100; }
+    .nav-logo { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
+    .btn-nav { background: var(--orange); color: #fff !important; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 14px; }
+    .btn-nav:hover { background: var(--orange-dark); text-decoration: none !important; }
+    .post-header { padding: 72px 0 48px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .post-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px; }
+    .post-meta { color: var(--muted); font-size: 14px; }
+    .post-meta span { color: var(--text); font-weight: 600; }
+    .post-body { padding-bottom: 80px; }
+    .post-body h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--text); }
+    .post-body h3 { font-size: 1.1rem; font-weight: 700; margin: 32px 0 12px; color: var(--text); }
+    .post-body p { margin-bottom: 24px; color: #e5e7eb; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 24px; color: #e5e7eb; }
+    .post-body li { margin-bottom: 10px; }
+    .post-body strong { color: var(--text); }
+    .callout { background: var(--section-bg); border-left: 3px solid var(--orange); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+    .callout p { margin: 0; color: var(--muted); font-size: 16px; }
+    .callout strong { color: var(--orange); }
+    .agent-card { border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin: 32px 0; }
+    .agent-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .agent-num { width: 40px; height: 40px; border-radius: 8px; background: var(--orange); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+    .agent-title h3 { margin: 0 0 4px; font-size: 1.1rem; }
+    .agent-title p { margin: 0; color: var(--muted); font-size: 14px; }
+    .agent-card ul { margin: 0 0 0 20px; color: #e5e7eb; }
+    .agent-card li { margin-bottom: 8px; font-size: 16px; }
+    .agent-card h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 16px 0 8px; }
+    .cta-box { background: var(--section-bg); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; margin: 64px 0; }
+    .cta-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-box p { color: var(--muted); margin-bottom: 24px; font-size: 16px; }
+    .btn-cta { display: inline-block; background: var(--orange); color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; }
+    .btn-cta:hover { background: var(--orange-dark); text-decoration: none; }
+    footer { border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; color: var(--muted); font-size: 14px; }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">OperatorStack</a>
+  <div class="nav-links">
+    <a href="/blog/">Blog</a>
+    <a href="https://obsynix.gumroad.com/l/jnfkij" class="btn-nav">Get the Kit — $67</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="post-header">
+    <span class="post-tag">AI Agents · Templates</span>
+    <h1>AI Agent Templates for Business: The 5 You Need First</h1>
+    <div class="post-meta">By <span>Trevon Wilson</span> · May 14, 2026 · 8 min read</div>
+  </div>
+
+  <div class="post-body">
+
+    <p>Every business owner who sets up their first AI agent faces the same problem: where do you start? What does the template actually contain? How do you make it specific enough to be useful, but flexible enough to cover the work you actually do?</p>
+
+    <p>Most guides answer this with vague advice: "Define the role. Add some rules. Include context." That's accurate, but it doesn't help you build the first one.</p>
+
+    <p>This post is more concrete. Here are the five AI agent templates every business needs, what each one contains, and the specific sections you fill in to make them work.</p>
+
+    <h2>What an AI agent template is (and isn't)</h2>
+
+    <p>An AI agent template isn't software. It's a structured text document — a SOUL template — that you paste at the start of an AI session to give the agent its identity, its rules, and its operating context.</p>
+
+    <p>A SOUL template contains:</p>
+    <ul>
+      <li><strong>Agent name and role</strong> — who this agent is and what it owns</li>
+      <li><strong>Standing rules</strong> — behavioral instructions the agent follows every session</li>
+      <li><strong>Scope</strong> — what this agent handles and what it explicitly does not</li>
+      <li><strong>Escalation protocol</strong> — what triggers a handoff to you</li>
+    </ul>
+
+    <p>You pair the SOUL template with a business memory file (your company context) and a task brief (the specific work for this session). Together, these three files create a fully functional no-code AI agent.</p>
+
+    <div class="callout">
+      <p><strong>Why templates instead of building from scratch?</strong> Because every hour you spend writing a SOUL template is an hour you're not doing the actual work. Pre-built templates give you an 80% starting point — you customize the remaining 20% to fit your specific business.</p>
+    </div>
+
+    <h2>The 5 core agent templates</h2>
+
+    <div class="agent-card">
+      <div class="agent-header">
+        <div class="agent-num">1</div>
+        <div class="agent-title">
+          <h3>The Research Agent</h3>
+          <p>Handles: prospect research, competitor intel, market data, content research</p>
+        </div>
+      </div>
+      <h4>What's in the template</h4>
+      <ul>
+        <li><strong>Role definition:</strong> Research analyst for [Business Name]. Responsible for gathering, summarizing, and structuring information from specified sources.</li>
+        <li><strong>Rules:</strong> Always cite sources. Summarize findings in structured format. Flag anything unverified with [UNVERIFIED]. Do not editorialize — report what you found, not what you think it means. Default output: bullet-point summary with source references.</li>
+        <li><strong>Scope:</strong> Owns research tasks only. Does not draft content, send communications, or make recommendations beyond what the data supports.</li>
+        <li><strong>Escalation:</strong> If a source is paywalled or inaccessible, flag and move to the next source. If all sources are inaccessible, report back before proceeding.</li>
+      </ul>
+      <h4>Best used for</h4>
+      <ul>
+        <li>Prospect research before a sales call</li>
+        <li>Competitor landscape updates</li>
+        <li>Summarizing industry reports or news</li>
+        <li>Finding data to support a content piece</li>
+      </ul>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-header">
+        <div class="agent-num">2</div>
+        <div class="agent-title">
+          <h3>The Content Agent</h3>
+          <p>Handles: blog posts, LinkedIn content, email newsletters, social captions</p>
+        </div>
+      </div>
+      <h4>What's in the template</h4>
+      <ul>
+        <li><strong>Role definition:</strong> Content writer for [Business Name]. Produces first drafts of written content in the owner's voice, following brand guidelines.</li>
+        <li><strong>Rules:</strong> Write in first-person. Never use [list of banned words]. Lead with the result or insight, not background. Short paragraphs. No headers under 300 words. Output is always a draft — never claim it's final. Flag any claims that need verification.</li>
+        <li><strong>Scope:</strong> Owns drafting. Does not publish, schedule, or make editorial decisions without review.</li>
+        <li><strong>Escalation:</strong> If the brief is unclear on audience or goal, ask before drafting. Do not guess intent.</li>
+      </ul>
+      <h4>Best used for</h4>
+      <ul>
+        <li>Weekly blog posts</li>
+        <li>LinkedIn posts and articles</li>
+        <li>Email newsletter drafts</li>
+        <li>Social media captions across platforms</li>
+      </ul>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-header">
+        <div class="agent-num">3</div>
+        <div class="agent-title">
+          <h3>The Customer Comms Agent</h3>
+          <p>Handles: customer email drafts, follow-ups, project updates, inquiry responses</p>
+        </div>
+      </div>
+      <h4>What's in the template</h4>
+      <ul>
+        <li><strong>Role definition:</strong> Customer communications specialist for [Business Name]. Drafts professional, warm, and concise responses to customer inquiries and updates.</li>
+        <li><strong>Rules:</strong> Always address the customer by first name. Match the customer's tone (if they're formal, stay formal). Keep responses under [X] words unless more is required. Never promise outcomes that aren't confirmed. Escalate complaints, refund requests, and anything involving money immediately.</li>
+        <li><strong>Scope:</strong> Drafts only — does not send. Handles routine inquiries, updates, and follow-ups. Does not handle billing disputes, contract negotiations, or legal matters.</li>
+        <li><strong>Escalation:</strong> Any negative sentiment, refund request, legal mention, or media inquiry → flag immediately, do not draft a response.</li>
+      </ul>
+      <h4>Best used for</h4>
+      <ul>
+        <li>Drafting replies to incoming inquiries</li>
+        <li>Weekly project update emails to clients</li>
+        <li>Follow-up sequences after proposals</li>
+        <li>Routine onboarding communications</li>
+      </ul>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-header">
+        <div class="agent-num">4</div>
+        <div class="agent-title">
+          <h3>The Ops Agent</h3>
+          <p>Handles: weekly reporting, process documentation, status tracking, internal summaries</p>
+        </div>
+      </div>
+      <h4>What's in the template</h4>
+      <ul>
+        <li><strong>Role definition:</strong> Operations analyst for [Business Name]. Responsible for producing weekly summaries, status reports, and structured documentation of current processes and priorities.</li>
+        <li><strong>Rules:</strong> Always use consistent formatting. Summarize — do not pad. If data is missing, flag it rather than estimating. Report what is done, in progress, blocked, and next. Default format: [Weekly Report Template] unless specified otherwise.</li>
+        <li><strong>Scope:</strong> Owns reporting and documentation. Does not make strategic decisions, reallocate resources, or communicate externally.</li>
+        <li><strong>Escalation:</strong> If a blocker has been unresolved for more than [X] days, flag for owner review before including in report.</li>
+      </ul>
+      <h4>Best used for</h4>
+      <ul>
+        <li>Weekly business status summaries</li>
+        <li>Client reporting templates</li>
+        <li>Process documentation</li>
+        <li>Tracking what's done, in progress, and blocked</li>
+      </ul>
+    </div>
+
+    <div class="agent-card">
+      <div class="agent-header">
+        <div class="agent-num">5</div>
+        <div class="agent-title">
+          <h3>The General Agent</h3>
+          <p>Handles: ad-hoc tasks, miscellaneous requests, one-off research, drafts that don't fit a category</p>
+        </div>
+      </div>
+      <h4>What's in the template</h4>
+      <ul>
+        <li><strong>Role definition:</strong> General assistant for [Business Name]. Handles miscellaneous tasks that don't belong to a specialized agent. Flexible scope, high responsiveness.</li>
+        <li><strong>Rules:</strong> Ask before assuming scope. Confirm the expected output format before producing. Flag anything that seems like it should be routed to a specialized agent. When in doubt: do less, ask more.</li>
+        <li><strong>Scope:</strong> Everything not owned by a specialized agent. If a specialized agent exists for the task, route there instead.</li>
+        <li><strong>Escalation:</strong> Any task that requires access to external systems, financial decisions, or public communication → escalate to owner.</li>
+      </ul>
+      <h4>Best used for</h4>
+      <ul>
+        <li>One-off research tasks</li>
+        <li>Quick drafts that don't fit content or comms</li>
+        <li>Summarizing documents or meetings</li>
+        <li>Anything miscellaneous that comes up during the week</li>
+      </ul>
+    </div>
+
+    <h2>How to customize these templates for your business</h2>
+
+    <p>Each template above is a starting framework. Customization happens in three places:</p>
+
+    <h3>1. Add your specific rules</h3>
+    <p>The rules section is where your business personality comes through. Add rules that reflect your actual standards: the words you never use, the format you always prefer, the client types you work with, the tone that fits your brand. Aim for 8–15 rules per agent — specific enough to guide behavior, not so many that they conflict.</p>
+
+    <h3>2. Set your escalation triggers</h3>
+    <p>Every agent needs clear escalation rules. What situations require your judgment instead of the agent's? Define these explicitly so the agent doesn't attempt to handle things that should come to you — and doesn't over-escalate on things it can handle.</p>
+
+    <h3>3. Connect it to your memory file</h3>
+    <p>The SOUL template defines who the agent is. The business memory file provides the context it operates in — your customers, your voice, your current priorities, your key products. Every agent uses the same memory file; the SOUL template is what makes each one unique.</p>
+
+    <h2>The order to deploy them</h2>
+
+    <p>Don't try to launch all five at once. The recommended order:</p>
+    <ol>
+      <li><strong>Customer Comms Agent</strong> — highest immediate time savings, easiest to test, output is low-risk (drafts only)</li>
+      <li><strong>Content Agent</strong> — second highest time savings, output is reviewable before use</li>
+      <li><strong>Research Agent</strong> — adds leverage to sales and strategy; refine the rules after the first 3–4 sessions</li>
+      <li><strong>Ops Agent</strong> — builds momentum once you have the other three running</li>
+      <li><strong>General Agent</strong> — deploy last; you'll understand what it needs to handle after using the others for a few weeks</li>
+    </ol>
+
+    <p>Most business owners who follow this order have all five running within 2–3 weeks of starting. Total setup time per agent: 60–90 minutes. Total weekly time savings once all five are live: 15–25 hours.</p>
+
+    <div class="cta-box">
+      <h3>Get all 5 templates — pre-built and ready to deploy.</h3>
+      <p>The AI Agent Starter Kit includes a complete SOUL template for each of the five agent types above, the business memory framework, and a setup guide. Built for non-technical business owners who want this running this week.</p>
+      <a href="https://obsynix.gumroad.com/l/jnfkij" class="btn-cta">Get the AI Agent Starter Kit — $67</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p style="margin-bottom:8px;"><a href="/">OperatorStack</a> · AI systems for operators who get things done</p>
+    <p><a href="/blog/">Blog</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
