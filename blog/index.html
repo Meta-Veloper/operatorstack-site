@@ -28,6 +28,11 @@
     .blog-hero { padding: 72px 0 48px; border-bottom: 1px solid var(--border); }
     .blog-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
     .blog-hero p { color: var(--muted); font-size: 18px; }
+    .start-here-box { margin-top: 28px; background: var(--section-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .start-here-box h2 { font-size: 1.2rem; margin-bottom: 10px; }
+    .start-here-box p { font-size: 15px; margin-bottom: 14px; }
+    .quick-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .quick-links a { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; font-size: 14px; color: var(--text); }
     .post-grid { padding: 56px 0; display: flex; flex-direction: column; gap: 48px; }
     .post-card { border-bottom: 1px solid var(--border); padding-bottom: 48px; }
     .post-card:last-child { border-bottom: none; }
@@ -57,9 +62,28 @@
   <div class="blog-hero">
     <h1>The OperatorStack Blog</h1>
     <p>Practical guides on AI agents, automation, and building systems that run your business. No coding required.</p>
+    <div class="start-here-box">
+      <h2>New here?</h2>
+      <p>Start with the free guide, then move through the main hubs so you don’t get lost in random AI advice.</p>
+      <div class="quick-links">
+        <a href="/start-here/">Start Here</a>
+        <a href="/ai-agents-for-small-business/">AI Agents for Small Business</a>
+        <a href="/ai-workflows/">AI Workflows</a>
+        <a href="/ai-automation-for-small-business/">AI Automation</a>
+      </div>
+    </div>
   </div>
 
   <div class="post-grid">
+
+    <article class="post-card">
+      <span class="post-tag">OperatorStack · Founder Lessons</span>
+      <h2><a href="/blog/what-building-operatorstack-taught-me/">What Building OperatorStack Taught Me About AI Systems That Actually Help a Business</a></h2>
+      <p>Five practical lessons from building OperatorStack: structure beats prompts, continuity beats cleverness, and operator-first systems beat hype-first AI.</p>
+      <div class="post-meta">By <span>Trevon Wilson</span> · Jun 20, 2026 · 7 min read</div>
+      <br>
+      <a href="/blog/what-building-operatorstack-taught-me/" class="read-link">Read the guide →</a>
+    </article>
 
     <article class="post-card">
       <span class="post-tag">AI Productivity · Small Business</span>
