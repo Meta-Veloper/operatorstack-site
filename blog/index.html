@@ -33,6 +33,14 @@
     .start-here-box p { font-size: 15px; margin-bottom: 14px; }
     .quick-links { display: flex; gap: 12px; flex-wrap: wrap; }
     .quick-links a { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; font-size: 14px; color: var(--text); }
+    .pillar-cluster { padding: 48px 0 0; }
+    .pillar-cluster h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .pillar-cluster > p { color: var(--muted); margin-bottom: 20px; font-size: 16px; }
+    .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+    .pillar-card { display: block; background: var(--section-bg); border: 1px solid var(--border); border-radius: 10px; padding: 18px; color: var(--text); }
+    .pillar-card:hover { border-color: var(--orange); text-decoration: none; }
+    .pillar-card strong { display: block; margin-bottom: 8px; color: var(--text); }
+    .pillar-card span { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; }
     .post-grid { padding: 56px 0; display: flex; flex-direction: column; gap: 48px; }
     .post-card { border-bottom: 1px solid var(--border); padding-bottom: 48px; }
     .post-card:last-child { border-bottom: none; }
@@ -73,6 +81,25 @@
       </div>
     </div>
   </div>
+
+  <section class="pillar-cluster" aria-labelledby="pillar-cluster-heading">
+    <h2 id="pillar-cluster-heading">Start with the right operating layer</h2>
+    <p>Do not read random AI advice. Pick the hub that matches the work you are trying to make repeatable.</p>
+    <div class="pillar-grid">
+      <a class="pillar-card" href="/ai-agents-for-small-business/">
+        <strong>AI agents for small business</strong>
+        <span>Understand the role, memory, and ownership model before building anything.</span>
+      </a>
+      <a class="pillar-card" href="/ai-workflows/">
+        <strong>AI workflows without coding</strong>
+        <span>Turn repeated tasks into a simple flow that does not reset every week.</span>
+      </a>
+      <a class="pillar-card" href="/ai-automation-for-small-business/">
+        <strong>AI automation for operators</strong>
+        <span>Choose the tasks worth automating first and avoid brittle tool stacks.</span>
+      </a>
+    </div>
+  </section>
 
   <div class="post-grid">
 
