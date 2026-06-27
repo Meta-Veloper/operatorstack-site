@@ -438,14 +438,14 @@
     <h1>Build AI agents for your small business that actually run repeatable work.</h1>
     <p class="hero-sub">Most business owners still use ChatGPT one prompt at a time. OperatorStack gives you the practical path into AI agents, AI workflows, and small business automation that saves time every week.</p>
     <a href="/start-here/" class="btn-primary">→ Start Here Free</a>
-    <span class="btn-price-note">Use the guided start page first, or grab the direct free guide at <a href="/guide.html">/guide.html</a>.</span>
+    <span class="btn-price-note">Use the guided start page first, or jump to the free <a href="#manual-work-audit">Manual Work Audit</a> below.</span>
     <div class="trust-bar">
       <span>AI agents for small business</span>
       <span>No coding required</span>
       <span>Deploy in 24 hours</span>
       <span>7-day money-back guarantee</span>
     </div>
-    <p style="margin-top:24px;color:var(--muted);font-size:15px;">Start with the <a href="/start-here/">guided path</a>, grab the <a href="/guide.html">free guide PDF</a>, go deeper with <a href="/ai-agents-for-small-business/">AI agents for small business</a>, or jump into <a href="/ai-workflows/">AI workflows without coding</a>.</p>
+    <p style="margin-top:24px;color:var(--muted);font-size:15px;">Start with the <a href="/start-here/">guided path</a>, use the free <a href="#manual-work-audit">Manual Work Audit</a> to find your first bottleneck, go deeper with <a href="/ai-agents-for-small-business/">AI agents for small business</a>, or jump into <a href="/ai-workflows/">AI workflows without coding</a>.</p>
   </div>
   <!-- Hero image: agent network diagram -->
   <div class="hero-image-wrap">
@@ -475,7 +475,7 @@
 </section>
 
 <!-- PROBLEM -->
-<section>
+<section id="manual-work-audit">
   <div class="container">
     <h2>You're Using AI. But AI Isn't Running Your Business.</h2>
     <p>Here's what's actually happening for most business owners right now:</p>
@@ -745,9 +745,9 @@
 <section>
   <div class="container">
     <div class="optin-box">
-      <h2>Start here for free.</h2>
-      <p><strong>Download: "The 5 AI Agent Mistakes Most Business Owners Make"</strong></p>
-      <p>A short guide covering the 5 most common ways non-technical business owners set up AI agents wrong — and exactly how to fix each one. Then use the hub pages above to move into the right next workflow.</p>
+      <h2>Get the Manual Work Audit free.</h2>
+      <p><strong>Find the 3 repeated tasks in your business that should stop depending on you.</strong></p>
+      <p>A short operator-first audit for owners using ChatGPT or AI tools but still feeling like everything has to be pushed manually. Use it to spot the single highest-drag task before you buy or build anything else.</p>
       <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="b6f5be8f-5991-483f-9fa8-96ad3b475083"></script>
       <p class="optin-disclaimer">No spam. Just practical AI operator content, weekly.</p>
     </div>
@@ -761,5 +761,58 @@
 </footer>
 
 <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+<script>
+  (function(){
+    function trackEvent(name, params) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, params || {});
+      }
+    }
+
+    document.addEventListener('click', function(event) {
+      var link = event.target.closest && event.target.closest('a[href]');
+      if (!link) return;
+
+      var href = link.getAttribute('href') || '';
+      var text = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+
+      if (href.indexOf('obsynix.gumroad.com') !== -1) {
+        trackEvent('begin_checkout', {
+          event_category: 'conversion',
+          event_label: text || href,
+          link_url: href,
+          value: 67,
+          currency: 'USD'
+        });
+      } else if (href === '/guide.html' || href.indexOf('/guide.html') !== -1) {
+        trackEvent('generate_lead', {
+          event_category: 'lead_magnet',
+          event_label: text || href,
+          link_url: href
+        });
+      } else if (href === '/start-here/' || href.indexOf('/start-here/') !== -1) {
+        trackEvent('select_content', {
+          event_category: 'starter_path',
+          event_label: text || href,
+          link_url: href
+        });
+      } else if (href === '#pricing') {
+        trackEvent('view_item', {
+          event_category: 'pricing',
+          event_label: text || href
+        });
+      }
+    });
+
+    window.addEventListener('load', function() {
+      if (document.querySelector('script[data-beehiiv-form]')) {
+        trackEvent('view_promotion', {
+          event_category: 'lead_magnet',
+          event_label: 'beehiiv_embed_visible'
+        });
+      }
+    });
+  })();
+</script>
 </body>
 </html>
