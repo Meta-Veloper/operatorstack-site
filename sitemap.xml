@@ -25,6 +25,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://operatorstack.site/privacy-policy/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://operatorstack.site/terms/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://operatorstack.site/data-deletion/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://operatorstack.site/ai-agents-for-small-business/</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
